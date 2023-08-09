@@ -43,12 +43,11 @@ body {
 }
 
 .branding .logo {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
   color: #fff;
   text-align: left; /* 文字を左寄りに */
   letter-spacing: 1px;
-  padding-left: 20px; /* 左側の余白を追加 */
 }
 
 #app {
@@ -193,6 +192,37 @@ select {
   font-size: 14px;
   margin: 10px 0;
   text-align: center;
+}
+
+.our-story {
+  padding-top: 100px;
+  text-align: center; /* テキストを中央揃えにする */
+  background-color: #f0f0f0; /* 白背景 */
+  text-align: left; /* 左寄せに設定 */
+  padding-left: 350px; /* ヘッダーと同じ左パディングを適用 */
+  height: 600px; /* ブラウザのビューポートの高さと同じに設定 */
+}
+
+.our-story h2 {
+  font-family: 'Noto Sans JP', sans-serif; /* フォントファミリーを適用 */
+  font-weight: 500; /* 太字に設定 */
+  font-size: 30px; /* フォントサイズを大きく設定 */
+  margin-bottom: 50px; /* タイトルと文章との間隔を設定 */
+}
+
+.our-story p {
+  max-width: 70%; /* 段落の最大幅を設定 */
+  line-height: 3; /* 行間を調整 */
+}
+
+.feature-1,.feature-2, .feature-3,.user-reviews, .breathing-generator {
+  background-color: #a8d5ba; /* 緑背景 */
+  padding: 20px;
+}
+
+.app-screenshot {
+  width: 50%;
+  height: auto;
 }
 
 
