@@ -50,14 +50,14 @@ body {
   letter-spacing: 1px;
 }
 
-.top-image-container {
+.top-image-container, feature feature-1, feature feature-2, feature feature-3 {
   background-color: #a8d5ba; /* 背景色の設定 */
   display: flex; /* Flexboxを使用して要素を中央揃えにする */
   justify-content: center; /* 横方向の中央揃え */
   align-items: center; /* 縦方向の中央揃え */
 }
 
-.top-image-container img {
+.top-image-container,feature feature-1, feature feature-2, feature feature-3 img {
   width: 100%; /* 画像の幅を100%に設定 */
   max-width: 1366px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
