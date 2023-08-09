@@ -1,0 +1,211 @@
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  background: linear-gradient(120deg, #b2dbbf 0%, #99e1d9 50%, #b2dbbf 100%);
+  background-size: 300% 100%;
+  animation: bodyGradient 15s ease infinite; /* 色が移り変わるアニメーション */
+  color: #333; /* 一般的なテキストの色 */
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #000;
+  margin: 20px 0;
+}
+
+.page-description {
+  font-size: 18px; /* フォントサイズを大きく */
+  line-height: 1.6; /* 行間を調整 */
+  color: #333; /* 色を少し明るく */
+  margin: 50px auto;
+  max-width: 800px; /* 説明文の最大幅を広げる */
+  text-align: left; /* センタリング */
+  padding: 10px 20px; /* 余白を追加 */
+  border-radius: 10px; /* 角を丸く */
+  background-color: #f9f9f9; /* 背景色を少し灰色に */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* ソフトな影を追加 */
+}
+
+.header {
+  background: linear-gradient(120deg, #36d1dc 0%, #6dbd45 50%, #36d1dc 100%); /* 緑系統の背景 */
+  background-size: 300% 100%;
+  animation: headerGradient 15s ease infinite;
+  padding: 15px 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.branding .logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  text-align: left; /* 文字を左寄りに */
+  letter-spacing: 1px;
+  padding-left: 20px; /* 左側の余白を追加 */
+}
+
+#app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.purpose-selection {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.purpose-box {
+  width: 22%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  text-align: center;
+  cursor: pointer;
+}
+
+.purpose-box.selected {
+  border-color: #007BFF;
+}
+
+.purpose-label {
+  display: block;
+  padding: 10px;
+}
+
+/* それぞれの目的に応じたイメージカラー */
+.purpose-box:nth-child(1) { background-color: #e6e6ff; } /* リラックス */
+.purpose-box:nth-child(2) { background-color: #e6ffe6; } /* 健康 */
+.purpose-box:nth-child(3) { background-color: #ffe6e6; } /* 運動 */
+.purpose-box:nth-child(4) { background-color: #fffde6; } /* 集中力 */
+
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 40px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+select {
+  appearance: none;
+  background: url('data:image/svg+xml;utf8,<svg fill="grey" viewBox="0 0 140 140" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><g><path d="M20 40l50 50 50-50"/></g></svg>') no-repeat;
+  background-position: 95% center;
+  background-size: 15px;
+  padding-right: 30px;
+}
+
+.result {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.result {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-title {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.result-name {
+  color: #007BFF;
+  font-weight: bold;
+}
+
+.result-description {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.result-steps {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.result-step {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.confirm-button {
+  background-color: #28a745; /* 緑色の背景 */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 20px 0; /* 上下のマージンでボタンと結果の間隔を調整 */
+  display: block; /* ボタンをブロック要素にする */
+  width: 100px; /* ボタンの幅を設定 */
+  text-align: center; /* テキストを中央揃えにする */
+  margin-left: auto; /* 左マージンを自動に設定 */
+  margin-right: auto; /* 右マージンを自動に設定 */
+}
+
+.confirm-button:hover {
+  background-color: #1e7e34; /* ホバー時の背景色を濃い緑に */
+}
+
+.error-message {
+  color: #FF0000;
+  font-size: 14px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+
+/* 全体の背景色が移り変わるアニメーションのキーフレーム */
+@keyframes bodyGradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* ヘッダーの背景色が移り変わるアニメーションのキーフレーム */
+@keyframes headerGradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
