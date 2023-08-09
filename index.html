@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
-  </head>
-  
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
+</head>
+
+<body>
   <header class="header">
     <div class="container">
       <div class="branding">
@@ -16,60 +17,90 @@
       </div>
     </div>
   </header>
-
   
-  <p class="page-description">
-    「呼吸法ジェネレーター」は、あなたの目的と呼吸のパターンに合わせてパーソナライズした呼吸法を提供します。
-    リラックス、健康維持、運動能力向上、集中力強化などの目的に応じて、専門的な呼吸法を学ぶことができます。
-    1分間の呼吸回数と息止め可能時間を入力して、あなたに合った呼吸法を見つけましょう！
-  </p>
-
-  
-  <div id="app">
-     <div class="purpose-selection">
-       <div class="purpose-box" @click="selectPurpose('relax')" :class="{ selected: selectedPurpose === 'relax' }">
-         <label class="purpose-label">
-           <input type="radio" value="relax" v-model="selectedPurpose" />
-           リラックスと<br>ストレス緩和
-         </label>
-       </div>
-       <div class="purpose-box" @click="selectPurpose('health')" :class="{ selected: selectedPurpose === 'health' }">
-         <label class="purpose-label">
-           <input type="radio" value="health" v-model="selectedPurpose" />
-           健康と<br>体調管理
-         </label>
-       </div>
-       <div class="purpose-box" @click="selectPurpose('exercise')" :class="{ selected: selectedPurpose === 'exercise' }">
-         <label class="purpose-label">
-           <input type="radio" value="exercise" v-model="selectedPurpose" />
-           運動と<br>パフォーマンス向上
-         </label>
-       </div>
-       <div class="purpose-box" @click="selectPurpose('focus')" :class="{ selected: selectedPurpose === 'focus' }">
-         <label class="purpose-label">
-           <input type="radio" value="focus" v-model="selectedPurpose" />
-           集中力と<br>記憶力の向上
-         </label>
-       </div>
-    </div>
-    <div class="form-group">
-      <label for="breathRate">呼吸回数（回/秒）:</label>
-      <input type="number" id="breathRate" v-model="breathRate" min="1" />
-    </div>
-    <div class="form-group">
-      <label for="breathHoldTime">息止め可能時間（秒）:</label>
-      <input type="number" id="breathHoldTime" v-model="breathHoldTime" min="0" />
-    </div>
-    
-    <div class="error-message" v-if="errorMessage">{{ errorMessage }}</div>
-    <button class="confirm-button" @click="generateBreathingPattern">確定</button>
-
-    <div class="result" v-if="breathingPattern">
-      <h2 class="result-title">あなたにオススメの呼吸法: <span class="result-name">{{ breathingPattern.name }}</span></h2>
-      <ol class="result-steps">
-        <li v-for="step in steps" :key="step" class="result-step">{{ step }}</li>
-      </ol>
-    </div>
-    
+  <div class="top-image-container">
+    <img src="/images/CarboNose_Top.png" alt="CarboNose Top" />
   </div>
+  
+  <section class="our-story">
+    <!-- OUR STORYの内容 -->
+    <h2>OUR STORY</h2>
+    <p>現代社会では、ストレスや不安といったメンタルヘルスの問題が増え続けており、これに対処する方法が求められています。</p>
+    <p>私たちは、この問題に対処するために、誰もが無意識に行っている「呼吸」に着目しました。</p><br>
+    <p>インドの古代のヨガ、中国の道教における気功など、呼吸法の歴史は世界中に何千年も前から存在します。</p>
+    <p>この古代の知恵を取り入れ、現代の科学的なエビデンスで評価された呼吸法を用いて、</p>
+    <p>心と体を自己調整するための方法をCarboNoseが提供します。</p><br>
+    <p>私たちは、一人ひとりが自分で自分の心身を養い、他者への理解と共感を深める素養をつくる手助けをすることで、</p>
+    <p>より豊かな社会を創り上げることを使命に創業しました。</p>
+  </section>
+  
+  <section class="feature feature-1">
+    <!-- 提供機能①の内容 -->
+  </section>
+  <section class="feature feature-2">
+    <!-- 提供機能②の内容 -->
+  </section>
+  <section class="feature feature-3">
+    <!-- 提供機能③の内容 -->
+  </section>
+  <section class="user-reviews">
+    <!-- ユーザーレビューの内容 -->
+  </section>
+
+  <section class="breathing-generator">
+    <!-- 呼吸法ジェネレーターの内容 -->
+    <p class="page-description">
+      「呼吸法ジェネレーター」は、あなたの目的と呼吸のパターンに合わせてパーソナライズした呼吸法を提供します。
+      リラックス、健康維持、運動能力向上、集中力強化などの目的に応じて、専門的な呼吸法を学ぶことができます。
+      1分間の呼吸回数と息止め可能時間を入力して、あなたに合った呼吸法を見つけましょう！
+    </p>
+
+    <div id="app">
+       <div class="purpose-selection">
+         <div class="purpose-box" @click="selectPurpose('relax')" :class="{ selected: selectedPurpose === 'relax' }">
+           <label class="purpose-label">
+             <input type="radio" value="relax" v-model="selectedPurpose" />
+             リラックスと<br>ストレス緩和
+           </label>
+         </div>
+         <div class="purpose-box" @click="selectPurpose('health')" :class="{ selected: selectedPurpose === 'health' }">
+           <label class="purpose-label">
+             <input type="radio" value="health" v-model="selectedPurpose" />
+             健康と<br>体調管理
+           </label>
+         </div>
+         <div class="purpose-box" @click="selectPurpose('exercise')" :class="{ selected: selectedPurpose === 'exercise' }">
+           <label class="purpose-label">
+             <input type="radio" value="exercise" v-model="selectedPurpose" />
+             運動と<br>パフォーマンス向上
+           </label>
+         </div>
+         <div class="purpose-box" @click="selectPurpose('focus')" :class="{ selected: selectedPurpose === 'focus' }">
+           <label class="purpose-label">
+             <input type="radio" value="focus" v-model="selectedPurpose" />
+             集中力と<br>記憶力の向上
+           </label>
+         </div>
+      </div>
+      <div class="form-group">
+        <label for="breathRate">呼吸回数（回/秒）:</label>
+        <input type="number" id="breathRate" v-model="breathRate" min="1" />
+      </div>
+      <div class="form-group">
+        <label for="breathHoldTime">息止め可能時間（秒）:</label>
+        <input type="number" id="breathHoldTime" v-model="breathHoldTime" min="0" />
+      </div>
+
+      <div class="error-message" v-if="errorMessage">{{ errorMessage }}</div>
+      <button class="confirm-button" @click="generateBreathingPattern">確定</button>
+
+      <div class="result" v-if="breathingPattern">
+        <h2 class="result-title">あなたにオススメの呼吸法: <span class="result-name">{{ breathingPattern.name }}</span></h2>
+        <ol class="result-steps">
+          <li v-for="step in steps" :key="step" class="result-step">{{ step }}</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</body>
 </html>
