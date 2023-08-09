@@ -63,40 +63,40 @@ body {
   height: auto; /* 高さは自動調整 */
 }
 
-.feature feature-1 {
+.feature-1 {
   background-color: #a8d5ba; /* 背景色の設定 */
   display: flex; /* Flexboxを使用して要素を中央揃えにする */
   justify-content: center; /* 横方向の中央揃え */
   align-items: center; /* 縦方向の中央揃え */
 }
 
-.feature feature-1 img {
+.feature-1 img {
   width: 100%; /* 画像の幅を100%に設定 */
   max-width: 1366px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
 }
 
-.feature feature-2 {
+.feature-2 {
   background-color: #a8d5ba; /* 背景色の設定 */
   display: flex; /* Flexboxを使用して要素を中央揃えにする */
   justify-content: center; /* 横方向の中央揃え */
   align-items: center; /* 縦方向の中央揃え */
 }
 
-.feature feature-2 img {
+.feature-2 img {
   width: 100%; /* 画像の幅を100%に設定 */
   max-width: 1366px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
 }
 
-.feature feature-3 {
+.feature-3 {
   background-color: #a8d5ba; /* 背景色の設定 */
   display: flex; /* Flexboxを使用して要素を中央揃えにする */
   justify-content: center; /* 横方向の中央揃え */
   align-items: center; /* 縦方向の中央揃え */
 }
 
-.feature feature-3 img {
+.feature-3 img {
   width: 100%; /* 画像の幅を100%に設定 */
   max-width: 1366px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
@@ -247,7 +247,7 @@ select {
 }
 
 .our-story {
-  padding-top: 100px;
+  padding-top: 50px;
   text-align: center; /* テキストを中央揃えにする */
   background-color: #f0f0f0; /* 白背景 */
   text-align: left; /* 左寄せに設定 */
