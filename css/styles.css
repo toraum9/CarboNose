@@ -314,7 +314,67 @@ select {
   background-color: #5ba63c; /* ホバー時の背景色 */
 }
 
+.counting-display,
+.result-display {
+  font-size: 18px;
+}
 
+.count,
+.time-left {
+  font-weight: bold;
+}
+
+#breath-count-app,
+#hold-breath-app {
+  font-family: 'Noto Sans JP', sans-serif;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  margin: 20px 0;
+}
+
+#breath-count-app p,
+#hold-breath-app p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+#breath-count-app button,
+#hold-breath-app button {
+  background-color: #6dbd45; /* 緑系の色 */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  width: 200px; /* ボタンの幅 */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#breath-count-app button:hover,
+#hold-breath-app button:hover {
+  background-color: #5ca73c;
+}
+
+#breath-count-app .result,
+#hold-breath-app .result {
+  font-weight: bold;
+  color: #333;
+  font-size: 18px;
+}
+
+#breath-count-app .instructions,
+#hold-breath-app .instructions {
+  font-style: italic;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
 
 /* 全体の背景色が移り変わるアニメーションのキーフレーム */
 @keyframes bodyGradient {
