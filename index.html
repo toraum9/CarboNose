@@ -52,6 +52,44 @@
       </p>
   
       <div id="app">
+        <div id="breath-count-app">
+          <label for="purpose">①呼吸回数の測定</label> 
+          <p>15秒間で何回呼吸したかカウントしましょう。吸って吐いたら1回としてカウントします。</p>
+          <p>準備ができたら、下の「スタート」ボタンをクリックしてください。</p>
+          <div class="counting-control">
+            <button v-if="!isCounting" class="start-button" @click="startCounting">スタート</button>
+            <button v-if="isCounting" class="count-button" @click="incrementBreathCount">吸って吐いた</button>
+          </div>
+          <div class="counting-display" v-if="isCounting">
+            <p>呼吸した回数: <span class="count">{{ breathCount }}</span></p>
+          </div>
+          <div class="counting-display" v-if="isCounting">
+            <p>残り時間: <span class="time-left">{{ timeLeft }}秒</span></p>
+          </div>
+          <div class="result-display" v-if="!isCounting && breathCount > 0">
+            <p>1分間での推定呼吸回数: {{ breathCount * 4 }} 回でした。</p>
+          </div>        
+        </div>
+        
+        <div id="hold-breath-app">
+          <label for="purpose">②息止め可能時間の測定</label>
+          <div v-if="!isPreparing && !isMeasuring">
+            <button @click="startPreparing">測定する</button>
+          </div>
+          <div v-if="isPreparing">
+            <p>息を大きく吸って、吐いたら「測定開始」を押してください。</p>
+            <button @click="startMeasuring">測定開始</button>
+          </div>
+          <div v-if="isMeasuring">
+            <p>測定を開始しています...息を止めてください。</p>
+            <button @click="stopMeasuring">測定を停止する</button>
+          </div>
+          <div v-if="holdTime">
+            <p>あなたの息止め可能時間は {{ holdTime }} 秒でした。</p>
+          </div>
+        </div>
+  
+        
         <label for="purpose">あなたが求める効果を選んでください:</label> 
          <div class="purpose-selection">
            <div class="purpose-box" @click="selectPurpose('relax')" :class="{ selected: selectedPurpose === 'relax' }">
@@ -97,7 +135,7 @@
             <li v-for="step in steps" :key="step" class="result-step">{{ step }}</li>
           </ol>
         </div>
-      </div>  
+      </div>
     </section>
     
     <section class="contact-us">
