@@ -64,7 +64,7 @@ body {
 }
 
 .Problem {
-  background-color: #f0f0f0; /* 背景色の設定 */
+  background-color: #ffffff; /* 背景色の設定 */
   display: flex; /* Flexboxを使用して要素を中央揃えにする */
   justify-content: center; /* 横方向の中央揃え */
   align-items: center; /* 縦方向の中央揃え */
