@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
-  </head>
-  
-  <body>
-    <header class="header">
-      <div class="container">
-        <div class="branding">
-          <h1 class="logo">CarboNose</h1>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="branding">
+        <h1 class="logo">CarboNose</h1>
       </div>
-    </header>
-    
-    <div class="top-image-container">
-      <img src="images/CarboNose_Top.png" alt="CarboNose Top" />
     </div>
-
-    <div class="Mission">
-      <img src="images/CarboNose_Mission.png" alt="CarboNose Mission" />
-    </div>
+  </header>
   
-    <div class="Solution">
-      <img src="images/CarboNose_Solution.png" alt="CarboNose Solution" />
-    </div>
+  <div class="top-image-container">
+    <img src="images/CarboNose_Top.png" alt="CarboNose Top" />
+  </div>
 
+  <div class="Problem">
+    <img src="images/CarboNose_Problem.png" alt="CarboNose Problem" />
+  </div>
+  
     <!-- 提供機能①の内容 -->
     <div class="feature-1">
       <img src="images/feature-1.png" alt="CarboNose feature-1" />
@@ -43,100 +39,107 @@
       <img src="images/feature-3.png" alt="CarboNose feature-3" />
     </div>
 
-    <section class="breathing-generator">
-      <!-- 呼吸法ジェネレーターの内容 -->
-      <p class="page-description">
-        「呼吸法ジェネレーター」は、あなたの目的と呼吸のパターンに合わせてパーソナライズした呼吸法を提供します。
-        リラックス、健康維持、運動能力向上、集中力強化などの目的に応じて、専門的な呼吸法を学ぶことができます。
-        1分間の呼吸回数と息止め可能時間を入力して、あなたに合った呼吸法を見つけましょう！
-      </p>
-  
-      <div id="app">
-        <div id="breath-count-app">
-          <label for="purpose">①呼吸回数の測定</label> 
-          <p>15秒間で何回呼吸したかカウントしましょう。吸って吐いたら1回としてカウントします。</p>
+  <section class="breathing-generator">
+    <!-- 呼吸法ジェネレーターの内容 -->
+    <p class="page-description">
+      「呼吸法ジェネレーター」は、あなたの目的と呼吸のパターンに合わせてパーソナライズした呼吸法を提供します。
+      リラックス、健康維持、運動能力向上、集中力強化などの目的に応じて、専門的な呼吸法を学ぶことができます。
+      1分間の呼吸回数と息止め可能時間を入力して、あなたに合った呼吸法を見つけましょう！
+    </p>
+
+    <div id="app">
+      <div id="breath-count-app">
+        <label for="purpose">①1分間呼吸回数の測定</label> 
+        <p>15秒間で何回呼吸したかをカウントしましょう。吸って吐いたら1回としてカウントします。</p>
+        <div v-if="!isCounting">
           <p>準備ができたら、下の「スタート」ボタンをクリックしてください。</p>
-          <div class="counting-control">
-            <button v-if="!isCounting" class="start-button" @click="startCounting">スタート</button>
-            <button v-if="isCounting" class="count-button" @click="incrementBreathCount">吸って吐いた</button>
-          </div>
-          <div class="counting-display" v-if="isCounting">
-            <p>呼吸した回数: <span class="count">{{ breathCount }}</span></p>
-          </div>
-          <div class="counting-display" v-if="isCounting">
-            <p>残り時間: <span class="time-left">{{ timeLeft }}秒</span></p>
-          </div>
-          <div class="result-display" v-if="!isCounting && breathCount > 0">
-            <p>1分間での推定呼吸回数: {{ breathCount * 4 }} 回でした。</p>
-          </div>        
         </div>
-        
-        <div id="hold-breath-app">
-          <label for="purpose">②息止め可能時間の測定</label>
-          <div v-if="!isPreparing && !isMeasuring">
-            <button @click="startPreparing">測定する</button>
-          </div>
-          <div v-if="isPreparing">
-            <p>息を大きく吸って、吐いたら「測定開始」を押してください。</p>
-            <button @click="startMeasuring">測定開始</button>
-          </div>
-          <div v-if="isMeasuring">
-            <p>測定を開始しています...息を止めてください。</p>
-            <button @click="stopMeasuring">測定を停止する</button>
-          </div>
-          <div v-if="holdTime">
-            <p>あなたの息止め可能時間は {{ holdTime }} 秒でした。</p>
-          </div>
+        <div v-if="isCounting">
+          <p>吸って吐いたら、「呼吸した」ボタンをクリックしましょう。</p>
         </div>
-  
-        
-        <label for="purpose">あなたが求める効果を選んでください:</label> 
-         <div class="purpose-selection">
-           <div class="purpose-box" @click="selectPurpose('relax')" :class="{ selected: selectedPurpose === 'relax' }">
-             <label class="purpose-label">
-               <input type="radio" value="relax" v-model="selectedPurpose" />
-               リラックスと<br>ストレス緩和
-             </label>
-           </div>
-           <div class="purpose-box" @click="selectPurpose('health')" :class="{ selected: selectedPurpose === 'health' }">
-             <label class="purpose-label">
-               <input type="radio" value="health" v-model="selectedPurpose" />
-               健康と<br>体調管理
-             </label>
-           </div>
-           <div class="purpose-box" @click="selectPurpose('exercise')" :class="{ selected: selectedPurpose === 'exercise' }">
-             <label class="purpose-label">
-               <input type="radio" value="exercise" v-model="selectedPurpose" />
-               運動と<br>パフォーマンス向上
-             </label>
-           </div>
-           <div class="purpose-box" @click="selectPurpose('focus')" :class="{ selected: selectedPurpose === 'focus' }">
-             <label class="purpose-label">
-               <input type="radio" value="focus" v-model="selectedPurpose" />
-               集中力と<br>記憶力の向上
-             </label>
-           </div>
+        <div class="counting-control">
+          <button v-if="!isCounting" class="start-button" @click="startCounting">スタート</button>
+          <button v-if="isCounting" class="count-button" @click="incrementBreathCount">呼吸した</button>
         </div>
-        <div class="form-group">
-          <label for="breathRate">あなたの1分間呼吸回数（回/分）を教えてください:</label>
-          <input type="number" id="breathRate" v-model="breathRate" min="1" />
+        <div class="counting-display" v-if="isCounting">
+          <p>呼吸した回数: <span class="count">{{ breathCount }}</span></p>
         </div>
-        <div class="form-group">
-          <label for="breathHoldTime">あなたの息止め可能時間（秒）を教えてください:</label>
-          <input type="number" id="breathHoldTime" v-model="breathHoldTime" min="0" />
+        <div class="counting-display" v-if="isCounting">
+          <p>残り時間: <span class="time-left">{{ timeLeft }}秒</span></p>
         </div>
-  
-        <div class="error-message" v-if="errorMessage">{{ errorMessage }}</div>
-        <button class="confirm-button" @click="generateBreathingPattern">生成</button>
-  
-        <div class="result" v-if="breathingPattern">
-          <h2 class="result-title">あなたにオススメの呼吸法: <span class="result-name">{{ breathingPattern.name }}</span></h2>
-          <ol class="result-steps">
-            <li v-for="step in steps" :key="step" class="result-step">{{ step }}</li>
-          </ol>
+        <div class="result-display" v-if="!isCounting && breathCount > 0">
+          <p>1分間での推定呼吸回数: {{ breathCount * 4 }} 回でした。</p>
+        </div>        
+      </div>
+      
+      <div id="hold-breath-app">
+        <label for="purpose">②息止め可能時間の測定</label>
+        <p>あなたがどれだけの時間、息を止められるかを測定します。</p>
+        <p>「測定する」ボタンをクリックしてください。</p>
+        <div v-if="!isPreparing && !isMeasuring">
+          <button @click="startPreparing">測定する</button>
+        </div>
+        <div v-if="isPreparing">
+          <p>息を大きく吸って吐いたら、息を止めて、「測定開始」をクリックしてください。</p>
+          <button @click="startMeasuring">測定開始</button>
+        </div>
+        <div v-if="isMeasuring">
+          <p>測定しています...息を止めてください。</p>
+          <p>息が苦しくなったら「測定を停止する」をクリックしてください。</p>
+          <button @click="stopMeasuring">測定を停止する</button>
+        </div>
+        <div v-if="holdTime">
+          <p>あなたの息止め可能時間は {{ holdTime }} 秒でした。</p>
         </div>
       </div>
-    </section>
+
+      
+      <label for="purpose">あなたが求める効果を選んでください:</label> 
+       <div class="purpose-selection">
+         <div class="purpose-box" @click="selectPurpose('relax')" :class="{ selected: selectedPurpose === 'relax' }">
+           <label class="purpose-label">
+             <input type="radio" value="relax" v-model="selectedPurpose" />
+             リラックスと<br>ストレス緩和
+           </label>
+         </div>
+         <div class="purpose-box" @click="selectPurpose('health')" :class="{ selected: selectedPurpose === 'health' }">
+           <label class="purpose-label">
+             <input type="radio" value="health" v-model="selectedPurpose" />
+             健康と<br>体調管理
+           </label>
+         </div>
+         <div class="purpose-box" @click="selectPurpose('exercise')" :class="{ selected: selectedPurpose === 'exercise' }">
+           <label class="purpose-label">
+             <input type="radio" value="exercise" v-model="selectedPurpose" />
+             運動と<br>パフォーマンス向上
+           </label>
+         </div>
+         <div class="purpose-box" @click="selectPurpose('focus')" :class="{ selected: selectedPurpose === 'focus' }">
+           <label class="purpose-label">
+             <input type="radio" value="focus" v-model="selectedPurpose" />
+             集中力と<br>記憶力の向上
+           </label>
+         </div>
+      </div>
+      <div class="form-group">
+        <label for="breathRate">あなたの1分間呼吸回数（回/分）を教えてください:</label>
+        <input type="number" id="breathRate" v-model="breathRate" min="1" />
+      </div>
+      <div class="form-group">
+        <label for="breathHoldTime">あなたの息止め可能時間（秒）を教えてください:</label>
+        <input type="number" id="breathHoldTime" v-model="breathHoldTime" min="0" />
+      </div>
+
+      <div class="error-message" v-if="errorMessage">{{ errorMessage }}</div>
+      <button class="confirm-button" @click="generateBreathingPattern">生成</button>
+
+      <div class="result" v-if="breathingPattern">
+        <h2 class="result-title">あなたにオススメの呼吸法: <span class="result-name">{{ breathingPattern.name }}</span></h2>
+        <ol class="result-steps">
+          <li v-for="step in steps" :key="step" class="result-step">{{ step }}</li>
+        </ol>
+      </div>
+    </div>
     
     <section class="contact-us">
       <h2>CONTACT US</h2>
@@ -145,6 +148,7 @@
         <a href="mailto:info@carbonose.com" class="email-button">info@carbonose.com</a>
       </div>
     </section>
-    
-  </body>
+  </section>
+  
+</body>
 </html>
