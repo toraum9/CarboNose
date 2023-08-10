@@ -63,6 +63,19 @@ body {
   height: auto; /* 高さは自動調整 */
 }
 
+.Problem {
+  background-color: #f0f0f0; /* 背景色の設定 */
+  display: flex; /* Flexboxを使用して要素を中央揃えにする */
+  justify-content: center; /* 横方向の中央揃え */
+  align-items: center; /* 縦方向の中央揃え */
+}
+
+.Problem img {
+  width: 100%; /* 画像の幅を100%に設定 */
+  max-width: 1366px; /* 画像の最大幅を指定 */
+  height: auto; /* 高さは自動調整 */
+}
+
 .feature-1 {
   background-color: #a8d5ba; /* 背景色の設定 */
   display: flex; /* Flexboxを使用して要素を中央揃えにする */
@@ -244,28 +257,6 @@ select {
   font-size: 14px;
   margin: 10px 0;
   text-align: center;
-}
-
-.our-story {
-  padding-top: 50px;
-  text-align: center; /* テキストを中央揃えにする */
-  background-color: #f0f0f0; /* 白背景 */
-  text-align: left; /* 左寄せに設定 */
-  padding-left: 350px; /* ヘッダーと同じ左パディングを適用 */
-  height: 800px;
-}
-
-.our-story h2 {
-  font-family: 'Noto Sans JP', sans-serif; /* フォントファミリーを適用 */
-  font-weight: 500; /* 太字に設定 */
-  font-size: 30px; /* フォントサイズを大きく設定 */
-  margin-bottom: 50px; /* タイトルと文章との間隔を設定 */
-}
-
-.our-story p {
-  max-width: 70%; /* 段落の最大幅を設定 */
-  line-height: 3; /* 行間を調整 */
-  font-size: 18px;
 }
 
 .feature-1,.feature-2, .feature-3,.user-reviews, .breathing-generator {
