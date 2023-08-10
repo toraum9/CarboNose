@@ -118,6 +118,7 @@ body {
 #app {
   max-width: 800px;
   margin: 0 auto;
+  margin-bottom: 30px;
   padding: 25px;
   background-color: #ffffff;
   border-radius: 8px;
@@ -268,6 +269,35 @@ select {
   width: 50%;
   height: auto;
 }
+
+.contact-us {
+  background-color: #f3f4f6; /* 背景色 */
+  padding: 50px 0; /* 上下の余白 */
+  text-align: center; /* テキストを中央揃えにする */
+}
+
+.contact-us h2 {
+  font-size: 28px; /* タイトルのフォントサイズ */
+  margin-bottom: 20px; /* タイトルと説明文の間隔 */
+}
+
+.contact-us .email-container {
+  margin-top: 20px; /* 説明文とメールアドレスの間隔 */
+}
+
+.contact-us .email-button {
+  background-color: #6dbd45; /* ボタンの背景色 */
+  color: #ffffff; /* ボタンの文字色 */
+  padding: 10px 20px; /* ボタンの内側の余白 */
+  border-radius: 5px; /* ボタンの角を丸くする */
+  text-decoration: none; /* 下線を消す */
+  font-size: 16px; /* フォントサイズ */
+}
+
+.contact-us .email-button:hover {
+  background-color: #5ba63c; /* ホバー時の背景色 */
+}
+
 
 
 /* 全体の背景色が移り変わるアニメーションのキーフレーム */
