@@ -32,6 +32,7 @@ new Vue({
       if (this.timeLeft === 0) {
         clearInterval(this.timer);
         this.isCounting = false;
+        this.breathRate = this.breathCount * 4;
       }
     },
     incrementBreathCount() {
@@ -52,6 +53,7 @@ new Vue({
       this.isMeasuring = false;
       const endTime = new Date().getTime();
       this.holdTime = ((endTime - this.startTime) / 1000).toFixed(2);
+      this.breathHoldTime = this.holdTime;
     },
 		// 呼吸法ジェネレータ―
 		selectPurpose(purpose) {
@@ -109,4 +111,3 @@ new Vue({
     }
   },
 });
-
