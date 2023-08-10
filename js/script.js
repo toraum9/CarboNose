@@ -1,6 +1,18 @@
 new Vue({
   el: '#app',
   data: {
+    // 呼吸回数カウント
+    isCounting: false,
+    breathCount: 0,
+    timeLeft: 15,
+    timer: null,
+    buttonLabel: 'スタート',
+    // 息止め時間測定
+    isPreparing: false,
+    isMeasuring: false,
+    holdTime: null,
+    startTime: null,
+		// 呼吸法ジェネレータ―
     breathRate: '',
     breathHoldTime: '',
     selectedPurpose: 'relax',
@@ -8,7 +20,44 @@ new Vue({
     errorMessage: '',
   },
   methods: {
-    generateBreathingPattern() {
+    // 呼吸回数カウント
+    startCounting() {
+      this.isCounting = true;
+      this.breathCount = 0;
+      this.timeLeft = 15;
+      this.timer = setInterval(this.updateTimer, 1000);
+    },
+    updateTimer() {
+      this.timeLeft--;
+      if (this.timeLeft === 0) {
+        clearInterval(this.timer);
+        this.isCounting = false;
+      }
+    },
+    incrementBreathCount() {
+      this.breathCount++;
+    },
+    // 息止め時間測定
+    startPreparing() {
+      this.isPreparing = true;
+      this.isMeasuring = false;
+      this.holdTime = null;
+    },
+    startMeasuring() {
+      this.isPreparing = false;
+      this.isMeasuring = true;
+      this.startTime = new Date().getTime();
+    },
+    stopMeasuring() {
+      this.isMeasuring = false;
+      const endTime = new Date().getTime();
+      this.holdTime = ((endTime - this.startTime) / 1000).toFixed(2);
+    },
+		// 呼吸法ジェネレータ―
+		selectPurpose(purpose) {
+      this.selectedPurpose = purpose;
+    },
+		generateBreathingPattern() {
 			if (!this.breathRate || !this.breathHoldTime) {
         this.errorMessage = '1分間呼吸回数 または 息止め可能時間 を入力してください。';
         return;
@@ -20,7 +69,6 @@ new Vue({
         const breathHoldPoints = this.breathHoldTime < 20 ? 1 : this.breathHoldTime >= 30 ? 3 : 2;
         const totalPoints = breathRatePoints + breathHoldPoints;
         let pattern;
-
         const patterns = {
           beginner: {
             relax: { name: '周期的なため息呼吸', description:'吸う: 1秒, 吸う: 0.25秒, 吐く: 2秒, 5分間繰り返す'},
@@ -41,7 +89,6 @@ new Vue({
             focus: { name:  '片鼻呼吸法', description:'吸う: 左鼻孔 4秒, 息を止める: 4秒, 吐く: 右鼻孔 4秒, 5分間繰り返す'},
           },
         };
-
         if (totalPoints <= 2) {
           pattern = patterns.beginner[this.selectedPurpose];
         } else if (totalPoints <= 4) {
@@ -49,13 +96,9 @@ new Vue({
         } else {
           pattern = patterns.veteran[this.selectedPurpose];
         }
-
         this.breathingPattern = pattern;
       }
     },
-    selectPurpose(purpose) {
-      this.selectedPurpose = purpose;
-    }
   },
   computed: {
     steps() {
@@ -64,5 +107,6 @@ new Vue({
       }
       return [];
     }
-  }
+  },
 });
+
