@@ -389,13 +389,13 @@ select {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     border-radius: 5px;
-    width: 500px;
+    width: 350px;
     height: 300px;
     text-align: center;
     display: table;
     vertical-align: middle;
 }
-@media (max-width: 800px) {
+@media (max-width: 400px) {
     .popup {
         width: 90%;  /* 幅を90%に設定 */
         height: auto;  /* 高さを内容に合わせて自動に設定 */
