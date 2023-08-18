@@ -64,37 +64,28 @@ body {
 
 
 /* 画像系 */
-.Mission {
+.Solution, .Problem, .Reserch, .Price {
   background-color: #ffffff; /* 背景色の設定 */
   display: flex; /* Flexboxを使用して要素を中央揃えにする */
   justify-content: center; /* 横方向の中央揃え */
   align-items: center; /* 縦方向の中央揃え */
 }
-
-.Mission img {
-  width: 100%; /* 画像の幅を100%に設定 */
-  max-width: 1366px; /* 画像の最大幅を指定 */
-  height: auto; /* 高さは自動調整 */
-}
-
-.Solution {
-  background-color: #ffffff; /* 背景色の設定 */
-  display: flex; /* Flexboxを使用して要素を中央揃えにする */
-  justify-content: center; /* 横方向の中央揃え */
-  align-items: center; /* 縦方向の中央揃え */
-}
-
-.Solution img {
-  width: 100%; /* 画像の幅を100%に設定 */
-  max-width: 1366px; /* 画像の最大幅を指定 */
-  height: auto; /* 高さは自動調整 */
-}
-
-.feature-1 {
+.feature-1, .feature-2, .feature-3, .feature-4 {
   background-color: #a8d5ba; /* 背景色の設定 */
   display: flex; /* Flexboxを使用して要素を中央揃えにする */
   justify-content: center; /* 横方向の中央揃え */
   align-items: center; /* 縦方向の中央揃え */
+}
+
+.Problem img {
+  width: 100%; /* 画像の幅を100%に設定 */
+  max-width: 1366px; /* 画像の最大幅を指定 */
+  height: auto; /* 高さは自動調整 */
+}
+.Solution img {
+  width: 100%; /* 画像の幅を100%に設定 */
+  max-width: 1366px; /* 画像の最大幅を指定 */
+  height: auto; /* 高さは自動調整 */
 }
 
 .feature-1 img {
@@ -102,33 +93,31 @@ body {
   max-width: 1366px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
 }
-
-.feature-2 {
-  background-color: #a8d5ba; /* 背景色の設定 */
-  display: flex; /* Flexboxを使用して要素を中央揃えにする */
-  justify-content: center; /* 横方向の中央揃え */
-  align-items: center; /* 縦方向の中央揃え */
-}
-
 .feature-2 img {
   width: 100%; /* 画像の幅を100%に設定 */
   max-width: 1366px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
 }
-
-.feature-3 {
-  background-color: #a8d5ba; /* 背景色の設定 */
-  display: flex; /* Flexboxを使用して要素を中央揃えにする */
-  justify-content: center; /* 横方向の中央揃え */
-  align-items: center; /* 縦方向の中央揃え */
-}
-
 .feature-3 img {
   width: 100%; /* 画像の幅を100%に設定 */
   max-width: 1366px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
 }
-
+.feature-4 img {
+  width: 100%; /* 画像の幅を100%に設定 */
+  max-width: 1366px; /* 画像の最大幅を指定 */
+  height: auto; /* 高さは自動調整 */
+}
+.Reserch img {
+  width: 100%; /* 画像の幅を100%に設定 */
+  max-width: 1366px; /* 画像の最大幅を指定 */
+  height: auto; /* 高さは自動調整 */
+}
+.Price img {
+  width: 100%; /* 画像の幅を100%に設定 */
+  max-width: 1366px; /* 画像の最大幅を指定 */
+  height: auto; /* 高さは自動調整 */
+}
 
 /* 呼吸法ジェネレータ― */
 #app {
@@ -389,3 +378,71 @@ select {
   50% {background-position: 100% 50%;}
   100% {background-position: 0% 50%;}
 }
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 5px;
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    display: table;
+    vertical-align: middle;
+}
+
+.close-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.popup p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  padding: 30px 0;
+}
+
+.popup a {
+  color: #fff; /* リンクの色 */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.install-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* 緑色 */
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.install-button:hover {
+    background-color: #45a049; /* ホバー時の色を少し濃くする */
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
