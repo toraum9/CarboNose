@@ -18,6 +18,17 @@ new Vue({
     selectedPurpose: 'relax',
     breathingPattern: null,
     errorMessage: '',
+    
+    showPopup: false, // ポップアップ表示フラグ
+    closedPopup: false // ポップアップが既に閉じられたかどうかのフラグ
+  },
+  created() {
+    // スクロールイベントを監視
+    window.addEventListener('scroll', this.checkScroll);
+  },
+  beforeDestroy() {
+    // イベントリスナーを削除
+    window.removeEventListener('scroll', this.checkScroll);
   },
   methods: {
     // 呼吸回数カウント
@@ -101,6 +112,19 @@ new Vue({
         this.breathingPattern = pattern;
       }
     },
+    checkScroll() {
+      // ページの最下部にスクロールしたかを確認
+      const scrolledToBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight;
+      // ページの最下部にスクロールして、ポップアップがまだ閉じられていない場合、ポップアップを表示
+      if (scrolledToBottom && !this.closedPopup) {
+        this.showPopup = true;
+        console.log("showPopup:", this.showPopup);
+      }
+    },
+    closePopup() {
+      this.showPopup = false;   // ポップアップを非表示に
+      this.closedPopup = true;  // ポップアップが閉じられたことを示すフラグをセット
+    },
   },
   computed: {
     steps() {
@@ -108,6 +132,7 @@ new Vue({
         return this.breathingPattern.description.split(',').map((step, index) => `ステップ${index + 1}: ${step.trim()}`);
       }
       return [];
-    }
+    },
+    
   },
 });
