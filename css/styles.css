@@ -64,13 +64,13 @@ body {
 
 
 /* 画像系 */
-.Solution, .Problem, .Reserch, .Price {
+.Solution, .Problem, .Reserch {
   background-color: #ffffff; /* 背景色の設定 */
   display: flex; /* Flexboxを使用して要素を中央揃えにする */
   justify-content: center; /* 横方向の中央揃え */
   align-items: center; /* 縦方向の中央揃え */
 }
-.feature-1, .feature-2, .feature-3, .feature-4 {
+.feature-1, .feature-2, .feature-3, .feature-4, .Price {
   background-color: #a8d5ba; /* 背景色の設定 */
   display: flex; /* Flexboxを使用して要素を中央揃えにする */
   justify-content: center; /* 横方向の中央揃え */
