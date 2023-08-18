@@ -173,6 +173,17 @@ label {
 .purpose-box:nth-child(3) { background-color: #ffe6e6; } /* 運動 */
 .purpose-box:nth-child(4) { background-color: #fffde6; } /* 集中力 */
 
+/* スマホ向けのスタイル */
+@media (max-width: 600px) {
+    .purpose-selection {
+        flex-direction: column;  /* 縦に並べる */
+    }
+
+    .purpose-box {
+        width: 100%;  /* 幅を100%に設定 */
+        margin-bottom: 10px;  /* 各ボックスの間に余白を追加 */
+    }
+}
 
 input,
 select {
