@@ -294,7 +294,7 @@ select {
 
 .contact-us h2 {
   font-size: 28px; /* タイトルのフォントサイズ */
-  margin-bottom: 20px; /* タイトルと説明文の間隔 */
+  margin-bottom: 5px; /* タイトルと説明文の間隔 */
 }
 
 .contact-us .email-container {
