@@ -22,8 +22,8 @@
     <img src="images/CarboNose_Top.png" alt="CarboNose Top" />
   </div>
 
-  <div class="Mission">
-    <img src="images/CarboNose_Mission.png" alt="CarboNose Mission" />
+  <div class="Problem">
+    <img src="images/CarboNose_Problem.png" alt="CarboNose Problem" />
   </div>
   <div class="Solution">
     <img src="images/CarboNose_Solution.png" alt="CarboNose Solution" />
@@ -35,11 +35,15 @@
   </div> 
   <!-- 提供機能②の内容 -->
   <div class="feature-2">
-    <img src="images/feature-2.png" alt="CarboNose feature-2.png" />
+    <img src="images/feature-2.png" alt="CarboNose feature-2" />
   </div> 
   <!-- 提供機能③の内容 -->
   <div class="feature-3">
     <img src="images/feature-3.png" alt="CarboNose feature-3" />
+  </div>
+  <!-- 提供機能④の内容 -->
+  <div class="feature-4">
+    <img src="images/feature-4.png" alt="CarboNose feature-4" />
   </div>
 
   <section class="breathing-generator">
@@ -142,6 +146,19 @@
           <li v-for="step in steps" :key="step" class="result-step">{{ step }}</li>
         </ol>
       </div>
+      
+      <div v-if="showPopup" class="popup">
+        <div class="close-icon" @click="closePopup">✖</div>
+        <p>今ならお試しインストール実施中<br>この機会に、呼吸改善を試してみませんか<br></p>
+        <a href="#" class="install-button">今すぐインストール</a> <!-- ボタンの追加 -->
+      </div>
+    </div>
+    
+    <div class="Reserch">
+      <img src="images/CarboNose_Reserch.png" alt="CarboNose Reserch" />
+    </div>
+    <div class="Price">
+      <img src="images/CarboNose_Price.png" alt="CarboNose Price" />
     </div>
     
     <section class="contact-us">
