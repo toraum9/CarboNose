@@ -130,6 +130,26 @@ body {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+#breath-count-app button:hover,
+#hold-breath-app button:hover {
+  background-color: #5ca73c;
+}
+
+#breath-count-app .result,
+#hold-breath-app .result {
+  font-weight: bold;
+  color: #333;
+  font-size: 18px;
+}
+
+#breath-count-app .instructions,
+#hold-breath-app .instructions {
+  font-style: italic;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
 .title {
   text-align: center;
   color: #333;
@@ -151,7 +171,7 @@ label {
 }
 
 .purpose-box {
-  width: 22%;
+  width: 33%;
   padding: 10px;
   border: 2px solid #ccc;
   text-align: center;
@@ -169,18 +189,16 @@ label {
 
 /* それぞれの目的に応じたイメージカラー */
 .purpose-box:nth-child(1) { background-color: #e6e6ff; } /* リラックス */
-.purpose-box:nth-child(2) { background-color: #e6ffe6; } /* 健康 */
-.purpose-box:nth-child(3) { background-color: #ffe6e6; } /* 運動 */
-.purpose-box:nth-child(4) { background-color: #fffde6; } /* 集中力 */
+.purpose-box:nth-child(2) { background-color: #ffe6e6; } /* 運動 */
+.purpose-box:nth-child(3) { background-color: #fffde6; } /* 集中力 */
 
 /* スマホ向けのスタイル */
 @media (max-width: 600px) {
     .purpose-selection {
         flex-direction: column;  /* 縦に並べる */
     }
-
     .purpose-box {
-        width: 100%;  /* 幅を100%に設定 */
+        width: 90%;  /* 幅を100%に設定 */
         margin-bottom: 10px;  /* 各ボックスの間に余白を追加 */
     }
 }
@@ -276,7 +294,7 @@ select {
   text-align: center;
 }
 
-.feature-1, .feature-2, .feature-3,.user-reviews, .breathing-generator {
+.feature-1, .feature-2, .feature-3, .user-reviews, .breathing-generator {
   background-color: #a8d5ba; /* 緑背景 */
   padding: 20px;
 }
@@ -294,7 +312,7 @@ select {
 
 .contact-us h2 {
   font-size: 28px; /* タイトルのフォントサイズ */
-  margin-bottom: 5px; /* タイトルと説明文の間隔 */
+  margin-bottom: 10px; /* タイトルと説明文の間隔 */
 }
 
 .contact-us .email-container {
@@ -355,26 +373,6 @@ select {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-}
-
-#breath-count-app button:hover,
-#hold-breath-app button:hover {
-  background-color: #5ca73c;
-}
-
-#breath-count-app .result,
-#hold-breath-app .result {
-  font-weight: bold;
-  color: #333;
-  font-size: 18px;
-}
-
-#breath-count-app .instructions,
-#hold-breath-app .instructions {
-  font-style: italic;
-  color: #666;
-  font-size: 14px;
-  margin-bottom: 10px;
 }
 
 /* 全体の背景色が移り変わるアニメーションのキーフレーム */
