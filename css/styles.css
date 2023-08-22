@@ -92,25 +92,21 @@ body {
   width: 100%; /* 画像の幅を100%に設定 */
   max-width: 1366px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
-  display: block;
 }
 .feature-2 img {
   width: 100%; /* 画像の幅を100%に設定 */
   max-width: 1366px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
-  display: block;
 }
 .feature-3 img {
   width: 100%; /* 画像の幅を100%に設定 */
   max-width: 1366px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
-  display: block;
 }
 .feature-4 img {
   width: 100%; /* 画像の幅を100%に設定 */
   max-width: 1366px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
-  display: block;
 }
 .Reserch img {
   width: 100%; /* 画像の幅を100%に設定 */
@@ -127,25 +123,21 @@ body {
     width: 100%;
     max-width: 1366px; /* max-widthをリセット */
     flex-direction: column; /* 画像を縦に並べる */
-    justify-content: center; /* 横方向の中央揃え */
   }
   .feature-2 {
     width: 100%;
     max-width: 1366px; /* max-widthをリセット */
     flex-direction: column; /* 画像を縦に並べる */
-    justify-content: center; /* 横方向の中央揃え */
   }
   .feature-3 {
     width: 100%;
     max-width: 1366px; /* max-widthをリセット */
     flex-direction: column; /* 画像を縦に並べる */
-    justify-content: center; /* 横方向の中央揃え */
   }
   .feature-4 {
     width: 100%;
     max-width: 1366px; /* max-widthをリセット */
     flex-direction: column; /* 画像を縦に並べる */
-    justify-content: center; /* 横方向の中央揃え */
   }
 }
 
