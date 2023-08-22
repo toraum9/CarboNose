@@ -73,7 +73,6 @@ body {
 .feature-1, .feature-2, .feature-3, .feature-4, .Price {
   background-color: #a8d5ba; /* 背景色の設定 */
   display: flex; /* Flexboxを使用して要素を中央揃えにする */
-  flex-direction: column; /* 画像を縦に並べる */
   justify-content: center; /* 横方向の中央揃え */
   align-items: center; /* 縦方向の中央揃え */
 }
@@ -124,21 +123,25 @@ body {
   height: auto; /* 高さは自動調整 */
 }
 @media (max-width: 768px) {
-  .feature-1 img {
+  .feature-1 {
     width: 100%;
     max-width: none; /* max-widthをリセット */
+    flex-direction: column; /* 画像を縦に並べる */
   }
-  .feature-2 img {
+  .feature-2 {
     width: 100%;
     max-width: none; /* max-widthをリセット */
+    flex-direction: column; /* 画像を縦に並べる */
   }
-  .feature-3 img {
+  .feature-3 {
     width: 100%;
     max-width: none; /* max-widthをリセット */
+    flex-direction: column; /* 画像を縦に並べる */
   }
-  .feature-4 img {
+  .feature-4 {
     width: 100%;
     max-width: none; /* max-widthをリセット */
+    flex-direction: column; /* 画像を縦に並べる */
   }
 }
 
