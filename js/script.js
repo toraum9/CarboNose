@@ -119,7 +119,7 @@ new Vue({
   computed: {
     steps() {
       if (this.breathingPattern) {
-        return this.breathingPattern.description.split(',').map((step, index) => `${index + 1}: ${step.trim()}`);
+        return this.breathingPattern.description.split(',').map((step, index) => `${step.trim()}`);
       }
       return [];
     },
