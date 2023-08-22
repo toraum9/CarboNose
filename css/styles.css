@@ -120,23 +120,15 @@ body {
 }
 @media (max-width: 768px) {
   .feature-1 {
-    width: 100%;
-    max-width: 1366px; /* max-widthをリセット */
     flex-direction: column; /* 画像を縦に並べる */
   }
   .feature-2 {
-    width: 100%;
-    max-width: 1366px; /* max-widthをリセット */
     flex-direction: column; /* 画像を縦に並べる */
   }
   .feature-3 {
-    width: 100%;
-    max-width: 1366px; /* max-widthをリセット */
     flex-direction: column; /* 画像を縦に並べる */
   }
   .feature-4 {
-    width: 100%;
-    max-width: 1366px; /* max-widthをリセット */
     flex-direction: column; /* 画像を縦に並べる */
   }
 }
