@@ -84,30 +84,20 @@ new Vue({
         let pattern;
         const patterns = {
           beginner: {
-            relax: { name: '周期的なため息呼吸', description:'吸う: 1秒, 吸う: 0.25秒, 吐く: 2秒, 5分間繰り返す'},
-            health: { name:  'Box(3s)呼吸法', description:'吸う: 3秒, 息を止める:3秒, 吐く: 3秒, 息を止める:3秒, 5分間繰り返す'},
-            exercise: { name:  'パワーブレス', description:'吸う: 3秒, 息を止める: 1秒, 連続で吐く: 5回, 5分間繰り返す'},
-            focus: { name:  '4-4-4 呼吸法', description:'吸う: 4秒, 息を止める:4秒, 吐く: 4秒, 5分間繰り返す'},
+            relax: { name:  'コヒーレント呼吸', description:'鼻から5.5秒間息を吸う, 鼻で同じ時間だけ息を吐く, これを10回繰り返す', url:'https://www.frontiersin.org/articles/10.3389/fnhum.2018.00353/full'},
+            exercise: { name: '横隔膜呼吸', description:'楽な姿勢で座る, 片方の手を胸に、もう片方の手を腹に当てる, 鼻から2秒間息を吸う, お腹を押しながら、すぼめた口で出来るだけゆっくりと吐く, これを5回繰り返す', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7602530/'},
+            focus: { name:  'ブテイコ呼吸', description:'息を吐ききってから鼻をつまんで息を止める, 息を吸いたくなったら鼻から息を吸う, 30秒間いつも通り呼吸して息を整える, これを5回程度繰り返す', url:'https://www.sciencedirect.com/science/article/pii/S0422763812000520'},
           },
           general: {
-            relax: { name:  '周期的なため息呼吸', description:'吸う: 1秒, 吸う: 0.25秒, 吐く: 2秒, 5分間繰り返す'},
-            health: { name:  'Box(4s)呼吸法', description:'吸う: 4秒, 息を止める:4秒, 吐く: 4秒, 息を止める:4秒, 5分間繰り返す'},
-            exercise: { name:  'パワーブレス', description:'吸う: 3秒, 息を止める: 1秒, 連続で吐く: 10回, 5分間繰り返す'},
-            focus: { name:  '代替鼻孔呼吸法', description:'吸う: 左鼻孔 4秒, 息を止める: 4秒, 吐く: 右鼻孔 4秒, 5分間繰り返す'},
-          },
-          veteran: {
-            relax: { name:  '4-7-8呼吸法', description:'吸う: 4秒, 息を止める: 7秒, 吐く: 8秒'},
-            health: { name:  'Box(5s)呼吸法', description:'吸う: 5秒, 息を止める:5秒, 吐く: 5秒, 息を止める:5秒, 5分間繰り返す'},
-            exercise: { name:  '周期的な過呼吸', description:'吸う: 2秒, 吐く: 1秒, 30回繰り返し, 息を止める: 15秒, 最初から3回繰り返す'},
-            focus: { name:  '片鼻呼吸法', description:'吸う: 左鼻孔 4秒, 息を止める: 4秒, 吐く: 右鼻孔 4秒, 5分間繰り返す'},
+            relax: { name:  '周期的なため息呼吸', description:'鼻から1~2秒間息を吸う, もう一度息を吸えるだけ吸う, 口から吸った時間以上の時間をかけて息を吐く, これを30回繰り返す', url:'https://www.cell.com/cell-reports-medicine/fulltext/S2666-3791(22)00474-8#'},
+            exercise: { name: '横隔膜呼吸', description:'楽な姿勢で座る, 片方の手を胸に、もう片方の手を腹に当てる, 鼻から2秒間息を吸う, お腹を押しながら、すぼめた口で出来るだけゆっくりと吐く, これを5回繰り返す', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7602530/'},
+            focus: { name:  '片鼻呼吸法', description:'右鼻を閉じて左鼻で4秒間吸う, 4秒間息を止める, 左鼻を閉じて右鼻で4秒間吐く, 左右を逆にして、これを左右で5回ずつ計10回繰り返す', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8378456/'},
           },
         };
-        if (totalPoints <= 2) {
+        if (totalPoints <= 5) {
           pattern = patterns.beginner[this.selectedPurpose];
-        } else if (totalPoints <= 4) {
-          pattern = patterns.general[this.selectedPurpose];
         } else {
-          pattern = patterns.veteran[this.selectedPurpose];
+          pattern = patterns.general[this.selectedPurpose];
         }
         this.breathingPattern = pattern;
       }
@@ -129,7 +119,7 @@ new Vue({
   computed: {
     steps() {
       if (this.breathingPattern) {
-        return this.breathingPattern.description.split(',').map((step, index) => `ステップ${index + 1}: ${step.trim()}`);
+        return this.breathingPattern.description.split(',').map((step, index) => `${index + 1}: ${step.trim()}`);
       }
       return [];
     },
