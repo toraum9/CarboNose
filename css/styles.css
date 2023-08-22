@@ -127,21 +127,25 @@ body {
     width: 100%;
     max-width: 1366px; /* max-widthをリセット */
     flex-direction: column; /* 画像を縦に並べる */
+    justify-content: center; /* 横方向の中央揃え */
   }
   .feature-2 {
     width: 100%;
     max-width: 1366px; /* max-widthをリセット */
     flex-direction: column; /* 画像を縦に並べる */
+    justify-content: center; /* 横方向の中央揃え */
   }
   .feature-3 {
     width: 100%;
     max-width: 1366px; /* max-widthをリセット */
     flex-direction: column; /* 画像を縦に並べる */
+    justify-content: center; /* 横方向の中央揃え */
   }
   .feature-4 {
     width: 100%;
     max-width: 1366px; /* max-widthをリセット */
     flex-direction: column; /* 画像を縦に並べる */
+    justify-content: center; /* 横方向の中央揃え */
   }
 }
 
