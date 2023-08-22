@@ -101,30 +101,24 @@
       </div>
 
       
-      <label for="purpose">あなたが求める効果を選んでください:</label> 
+      <label for="purpose">あなたが解決したい課題を選んでください:</label> 
        <div class="purpose-selection">
          <div class="purpose-box" @click="selectPurpose('relax')" :class="{ selected: selectedPurpose === 'relax' }">
            <label class="purpose-label">
              <input type="radio" value="relax" v-model="selectedPurpose" />
-             リラックスと<br>ストレス緩和
-           </label>
-         </div>
-         <div class="purpose-box" @click="selectPurpose('health')" :class="{ selected: selectedPurpose === 'health' }">
-           <label class="purpose-label">
-             <input type="radio" value="health" v-model="selectedPurpose" />
-             健康と<br>体調管理
+             浅い呼吸の改善<br>ストレスの緩和
            </label>
          </div>
          <div class="purpose-box" @click="selectPurpose('exercise')" :class="{ selected: selectedPurpose === 'exercise' }">
            <label class="purpose-label">
              <input type="radio" value="exercise" v-model="selectedPurpose" />
-             運動と<br>パフォーマンス向上
+             肺活量の強化<br>腹式呼吸の習得
            </label>
          </div>
          <div class="purpose-box" @click="selectPurpose('focus')" :class="{ selected: selectedPurpose === 'focus' }">
            <label class="purpose-label">
              <input type="radio" value="focus" v-model="selectedPurpose" />
-             集中力と<br>記憶力の向上
+             口呼吸の改善<br>免疫の向上
            </label>
          </div>
       </div>
@@ -145,6 +139,7 @@
         <ol class="result-steps">
           <li v-for="step in steps" :key="step" class="result-step">{{ step }}</li>
         </ol>
+        <a :href="breathingPattern.url" target="_blank">この呼吸法に関する論文を読む</a> 
       </div>
       
       <div v-if="showPopup" class="popup">
