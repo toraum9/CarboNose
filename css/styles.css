@@ -4,34 +4,10 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
   background: linear-gradient(120deg, #b2dbbf 0%, #99e1d9 50%, #b2dbbf 100%);
   background-size: 300% 100%;
+  background-color: #0A1A44;
   animation: bodyGradient 15s ease infinite; /* 色が移り変わるアニメーション */
   color: #333; /* 一般的なテキストの色 */
 }
-
-
-/* ヘッダー関連 */
-.header {
-  background: linear-gradient(120deg, #36d1dc 0%, #6dbd45 50%, #36d1dc 100%); /* 緑系統の背景 */
-  background-size: 300% 100%;
-  animation: headerGradient 15s ease infinite;
-  padding: 15px 0;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.branding .logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: #fff;
-  text-align: left; /* 文字を左寄りに */
-  letter-spacing: 1px;
-}
-
 
 /* 呼吸法ジェネレータ―の説明 */
 .page-description {
@@ -50,7 +26,7 @@ body {
 
 /* 最上部アプリ画像 */
 .top-image-container {
-  background-color: #a8d5ba; /* 背景色の設定 */
+  background-color: #0A1A44; /* 背景色の設定 */
   display: flex; /* Flexboxを使用して要素を中央揃えにする */
   justify-content: center; /* 横方向の中央揃え */
   align-items: center; /* 縦方向の中央揃え */
@@ -58,7 +34,6 @@ body {
 
 .top-image-container img {
   width: 100%; /* 画像の幅を100%に設定 */
-  max-width: 1366px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
 }
 
@@ -70,8 +45,8 @@ body {
   justify-content: center; /* 横方向の中央揃え */
   align-items: center; /* 縦方向の中央揃え */
 }
-.feature-1, .feature-2, .feature-3, .feature-4, .Price {
-  background-color: #a8d5ba; /* 背景色の設定 */
+.feature, .Price {
+  background-color: #0A1A44; /* 背景色の設定 */
   display: flex; /* Flexboxを使用して要素を中央揃えにする */
   justify-content: center; /* 横方向の中央揃え */
   align-items: center; /* 縦方向の中央揃え */
@@ -79,58 +54,25 @@ body {
 
 .Problem img {
   width: 100%; /* 画像の幅を100%に設定 */
-  max-width: 1366px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
 }
 .Solution img {
   width: 100%; /* 画像の幅を100%に設定 */
-  max-width: 1366px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
 }
 
-.feature-1 img {
+.feature img {
   width: 100%; /* 画像の幅を100%に設定 */
-  max-width: 683px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
 }
-.feature-2 img {
-  width: 100%; /* 画像の幅を100%に設定 */
-  max-width: 683px; /* 画像の最大幅を指定 */
-  height: auto; /* 高さは自動調整 */
-}
-.feature-3 img {
-  width: 100%; /* 画像の幅を100%に設定 */
-  max-width: 683px; /* 画像の最大幅を指定 */
-  height: auto; /* 高さは自動調整 */
-}
-.feature-4 img {
-  width: 100%; /* 画像の幅を100%に設定 */
-  max-width: 683px; /* 画像の最大幅を指定 */
-  height: auto; /* 高さは自動調整 */
-}
+
 .Reserch img {
   width: 100%; /* 画像の幅を100%に設定 */
-  max-width: 1366px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
 }
 .Price img {
   width: 100%; /* 画像の幅を100%に設定 */
-  max-width: 1366px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
-}
-@media (max-width: 768px) {
-  .feature-1 {
-    flex-direction: column; /* 画像を縦に並べる */
-  }
-  .feature-2 {
-    flex-direction: column; /* 画像を縦に並べる */
-  }
-  .feature-3 {
-    flex-direction: column; /* 画像を縦に並べる */
-  }
-  .feature-4 {
-    flex-direction: column; /* 画像を縦に並べる */
-  }
 }
 
 /* 呼吸法ジェネレータ― */
