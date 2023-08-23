@@ -53,25 +53,25 @@ body {
 }
 
 .Problem img {
-  width: 85%; /* 画像の幅を100%に設定 */
+  width: 90%; /* 画像の幅を100%に設定 */
   height: auto; /* 高さは自動調整 */
 }
 .Solution img {
-  width: 85%; /* 画像の幅を100%に設定 */
+  width: 90%; /* 画像の幅を100%に設定 */
   height: auto; /* 高さは自動調整 */
 }
 
 .feature img {
-  width: 85%; /* 画像の幅を100%に設定 */
+  width: 90%; /* 画像の幅を100%に設定 */
   height: auto; /* 高さは自動調整 */
 }
 
 .Reserch img {
-  width: 85%; /* 画像の幅を100%に設定 */
+  width: 90%; /* 画像の幅を100%に設定 */
   height: auto; /* 高さは自動調整 */
 }
 .Price img {
-  width: 85%; /* 画像の幅を100%に設定 */
+  width: 90%; /* 画像の幅を100%に設定 */
   height: auto; /* 高さは自動調整 */
 }
 
