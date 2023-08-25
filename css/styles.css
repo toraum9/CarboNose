@@ -45,7 +45,7 @@ body {
   justify-content: center; /* 横方向の中央揃え */
   align-items: center; /* 縦方向の中央揃え */
 }
-.feature, .Price {
+.Process, .feature, .Price {
   background: linear-gradient(to right bottom, #00C4CC, #0A1A44);
   display: flex; /* Flexboxを使用して要素を中央揃えにする */
   justify-content: center; /* 横方向の中央揃え */
@@ -53,6 +53,10 @@ body {
 }
 
 .Problem img {
+  width: 100%; /* 画像の幅を100%に設定 */
+  height: auto; /* 高さは自動調整 */
+}
+.Process img {
   width: 100%; /* 画像の幅を100%に設定 */
   height: auto; /* 高さは自動調整 */
 }
